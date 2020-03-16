@@ -1,0 +1,19 @@
+&perturbation
+GM_perturbation=T
+nr=2000
+nz=2048
+npsi=648
+sigma=0.05
+rho0=0.4975
+pertw=1D-3
+bt_sign=-1
+phi_sign=1
+radial_gaussian=.true.
+poloidal_envelope=1
+sigma_chi=0.7854
+nky       = 4
+delta_nky = 4
+nzero     = .false.
+
+/
+
