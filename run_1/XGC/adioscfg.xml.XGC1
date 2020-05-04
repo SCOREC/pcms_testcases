@@ -187,15 +187,6 @@
   <var name="value_z" type="real*8" dimensions="w_z,n_z"/>
 </adios-group>
 
-<adios-group name="diagnosis.smooth_pol">
-  <var name="n" type="integer"/>
-  <var name="m" type="integer"/>
-  <var name="w" type="integer"/>
-  <var name="nelement" type="integer" dimensions="n"/>
-  <var name="eindex" type="integer" dimensions="w,n"/>
-  <var name="value" type="real*8" dimensions="w,n"/>
-</adios-group>
-
 <adios-group name="diagnosis.mesh">
   <var name="n_n" type="integer"/>
   <var name="n_t" type="integer"/>

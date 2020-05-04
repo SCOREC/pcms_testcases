@@ -76,7 +76,6 @@ write_h5=F
 !type of operation
 nonlinear = T     
 x_local=F         
-wdmapp=T
 
 !choice of algorithms:
 !will be detected automatically and written to
