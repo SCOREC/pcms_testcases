@@ -1,12 +1,12 @@
 ## Contents
 
-d3d.smd - Simmetrix GeomSim geometric model with mesh generation attributes
-4p.cpn - four process partition of the geometric model faces of d3d.smd
-d3d-full_9k_sfc.osh - Omega_h mesh with nine thousand triangles
-d3d-full_9k_sfc_p16.osh - Omega_h with nine thousand triangles partitioned to 16 processes
+- d3d.smd - Simmetrix GeomSim geometric model with mesh generation attributes
+- 4p.cpn - four process partition of the geometric model faces of d3d.smd
+- d3d-full_9k_sfc.osh - Omega_h mesh with nine thousand triangles
+- d3d-full_9k_sfc_p16.osh - Omega_h with nine thousand triangles partitioned to 16 processes
   with the Omegah\_h recursive inertial bisection partitioner
-prepareMeshes.sh - script to convert, reorder, partition, and render meshes
-README.md - this file
+- prepareMeshes.sh - script to convert, reorder, partition, and render meshes
+- README.md - this file
 
 ## Notes
 
