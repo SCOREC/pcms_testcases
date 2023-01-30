@@ -1,4 +1,4 @@
-adv_log 1
+adv_log 0
 
 !Input EFIT file containing psi grid and wall boundary.
 eqdskFile geqdsk_gene_comp_case5_fix.eqd
@@ -60,7 +60,8 @@ bdyNodeOrder 0
 eqd_psi_factor 1.0
 
 !Number of 2D planes around the torus, used in spacing points on a curve.
-num_phi_planes 32
+!num_phi_planes 32
+!num_phi_planes 8
 
 !Tolerance for the gradient of psi
 !Effects how exactly the critical points (mins, x-point) are found
@@ -101,7 +102,7 @@ spacing_tolerance_absolute 0.9
 !The default value (0.996) corresponds to an approach angle of 5 degrees.
 parallel_cutoff 0.99975
 
-xgcmflxFile 1
+xgcmflxFile 0
 
 ! set reverse classification to 1 to dump out reverse classification file for coupler
 reverseClassification 1
