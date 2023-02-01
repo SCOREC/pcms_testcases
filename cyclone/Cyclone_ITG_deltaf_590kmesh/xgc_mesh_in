@@ -102,7 +102,7 @@ spacing_tolerance_absolute 0.9
 !The default value (0.996) corresponds to an approach angle of 5 degrees.
 parallel_cutoff 0.99975
 
-xgcmflxFile 1
+xgcmflxFile 0
 
 ! set reverse classification to 1 to dump out reverse classification file for coupler
 reverseClassification 1
