@@ -15,6 +15,7 @@ cp ../../geqdsk_gene_comp_case5_fix.eqd.ele \
 
 mkdir coupled
 cd coupled
+cp -r ../run_summit_coupled.sh ../*.cpn ../*.osh .
 mkdir deltaf1
 cd deltaf1
 echo `pwd`
