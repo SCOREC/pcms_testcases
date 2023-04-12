@@ -53,8 +53,10 @@ sml_field_aligned_initial=.true.
 &ptl_param
 ptl_mass_au=2D0             ! 1 for hydrogen, 2 for deutron
 ptl_charge_eu=1D0            ! ion charge
-ptl_num=2000000             ! number of particle for simulation
-ptl_maxnum=4000000
+!ptl_num=2000000             ! number of particle for simulation
+!ptl_maxnum=4000000
+ptl_num=20000             ! number of particle for simulation
+ptl_maxnum=40000
 /
 
 &eq_param ! Initial equilibrium profile - Tanh profile

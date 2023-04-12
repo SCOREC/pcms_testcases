@@ -1,0 +1,1 @@
+cmake -S omega_h -B /gpfs/alpine/scratch/jmerson/fus123/buildOmegaH -DOmega_h_USE_Kokkos=ON -DOmega_h_USE_MPI=ON -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=/gpfs/alpine/scratch/jmerson/fus123/buildOmegaH/install

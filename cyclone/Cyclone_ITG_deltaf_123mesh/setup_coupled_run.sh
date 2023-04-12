@@ -13,24 +13,14 @@ cp ../../geqdsk_gene_comp_case5_fix.eqd.ele \
   .
 }
 
-mkdir coupledrun
-cd coupledrun
+mkdir coupledrun_123
+cd coupledrun_123
 cp -r ../run_summit_coupled.sh ../*.cpn ../*.osh .
-mkdir core
-cd core
+mkdir deltaf1
+cd deltaf1
 echo `pwd`
 copyfiles
-echo "
-&wdmcpl
-wdmcpl_side=0
-/
-" >> input
 cd ../
-mkdir edge
-cd edge
+mkdir deltaf2
+cd deltaf2
 copyfiles
-echo "
-&wdmcpl
-wdmcpl_side=1
-/
-" >> input
