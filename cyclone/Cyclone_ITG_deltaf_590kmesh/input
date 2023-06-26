@@ -21,7 +21,6 @@ sml_inpsi=0.00            ! inner boundary of simulation - unit of eq_x_psi
 sml_outpsi=0.90           ! outter boundary of simulation - unit of eq_x_psi
 sml_restart_write_period=100
 sml_restart=.false.
-sml_deltaf_f0_mode=-2
 sml_guess_table_size=1000
 sml_00_efield=.false.
 sml_00_npsi=500
@@ -55,8 +54,7 @@ ptl_mass_au=2D0             ! 1 for hydrogen, 2 for deutron
 ptl_charge_eu=1D0            ! ion charge
 !ptl_num=2000000             ! number of particle for simulation
 !ptl_maxnum=4000000
-ptl_num=20000             ! number of particle for simulation
-ptl_maxnum=40000
+ptl_num_per_vertex=200 200             ! number of particle for simulation
 /
 
 &eq_param ! Initial equilibrium profile - Tanh profile
