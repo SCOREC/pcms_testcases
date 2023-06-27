@@ -11,6 +11,7 @@ cmake -S $HOME/coupler-sources/pcms -B $SCRATCH/coupler-build/pcms \
 	-Dredev_DIR=$MYDEPS/redev/install/lib64/cmake/redev/ \
 	-Dflcl_DIR=$MYDEPS/flcl/install/lib64/cmake/flcl/ \
 	-DWDMCPL_TEST_DATA_DIR=$SCRATCH/wdmapp_testcases \
-	-DMPIEXEC_EXECUTABLE=`which srun`
+	-DMPIEXEC_EXECUTABLE=`which srun` \
+	-DBUILD_TESTING=ON
 
 cmake --build $SCRATCH/coupler-build/pcms/ -j8 --target install
