@@ -1,6 +1,13 @@
-MYDEPS=$SCRATCH/coupler-build/
-cmake -S $HOME/coupler-sources/pcms -B $SCRATCH/coupler-build/pcms \
-	-DCMAKE_INSTALL_PREFIX=$SCRATCH/coupler-build/pcms/install \
+SOURCE_DIR=$1
+BUILD_DIR=$2
+MYDEPS=$BUILD_DIR
+
+cd $SOURCE_DIR
+
+git clone git@github.com:jacobmerson/pcms.git
+
+cmake -S $SOURCE_DIR/pcms -B $BUILD_DIR/pcms \
+	-DCMAKE_INSTALL_PREFIX=$BUILD_DIR/pcms/install \
 	-DCMAKE_CXX_COMPILER=CC \
 	-DCMAKE_C_COMPILER=cc \
 	-DCMAKE_Fortran_COMPILER=ftn \
@@ -14,4 +21,4 @@ cmake -S $HOME/coupler-sources/pcms -B $SCRATCH/coupler-build/pcms \
 	-DMPIEXEC_EXECUTABLE=`which srun` \
 	-DBUILD_TESTING=ON
 
-cmake --build $SCRATCH/coupler-build/pcms/ -j8 --target install
+cmake --build $BUILD_DIR/pcms/ -j8 --target install

@@ -1,5 +1,12 @@
-cmake -S $HOME/coupler-sources/omega_h -B $SCRATCH/coupler-build/omega_h \
-	-DCMAKE_INSTALL_PREFIX=$SCRATCH/coupler-build/omega_h/install \
+SOURCE_DIR=$1
+BUILD_DIR=$2
+
+cd $SOURCE_DIR
+
+git clone git@github.com:SCOREC/omega_h.git
+
+cmake -S $SOURCE_DIR/omega_h -B $BUILD_DIR/omega_h \
+	-DCMAKE_INSTALL_PREFIX=$BUILD_DIR/omega_h/install \
 	-DCMAKE_CXX_COMPILER=CC \
 	-DOmega_h_USE_MPI=ON \
 	-DOmega_h_USE_Kokkos=ON \
@@ -8,4 +15,4 @@ cmake -S $HOME/coupler-sources/omega_h -B $SCRATCH/coupler-build/omega_h \
 	-DBUILD_SHARED_LIBS=OFF
 
 
-cmake --build $SCRATCH/coupler-build/omega_h/ -j8 --target install
+cmake --build $BUILD_DIR/omega_h/ -j8 --target install
