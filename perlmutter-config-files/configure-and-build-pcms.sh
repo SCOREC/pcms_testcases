@@ -2,6 +2,7 @@ SOURCE_DIR=$1
 BUILD_DIR=$2
 MYDEPS=$BUILD_DIR
 
+CURDIR=$PWD
 cd $SOURCE_DIR
 
 git clone git@github.com:jacobmerson/pcms.git
@@ -22,3 +23,4 @@ cmake -S $SOURCE_DIR/pcms -B $BUILD_DIR/pcms \
 	-DBUILD_TESTING=ON
 
 cmake --build $BUILD_DIR/pcms/ -j8 --target install
+cd $CURDIR

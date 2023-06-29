@@ -1,6 +1,7 @@
 SOURCE_DIR=$1
 BUILD_DIR=$2
 
+CURDIR=$PWD
 cd $SOURCE_DIR
 
 git clone git@github.com:SCOREC/omega_h.git
@@ -16,3 +17,4 @@ cmake -S $SOURCE_DIR/omega_h -B $BUILD_DIR/omega_h \
 
 
 cmake --build $BUILD_DIR/omega_h/ -j8 --target install
+cd $CURDIR

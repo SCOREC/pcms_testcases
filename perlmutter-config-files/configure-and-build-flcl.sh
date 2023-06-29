@@ -2,6 +2,7 @@ SOURCE_DIR=$1
 BUILD_DIR=$2
 DEP_DIR=$BUILD_DIR
 
+CURDIR=$PWD
 cd $SOURCE_DIR
 
 git clone git@github.com:kokkos/kokkos-fortran-interop.git
@@ -18,3 +19,4 @@ cmake -S $SOURCE_DIR/kokkos-fortran-interop -B $BUILD_DIR/flcl \
 
 
 cmake --build $BUILD_DIR/flcl/ -j8 --target install
+cd $CURDIR
