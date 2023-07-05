@@ -18,5 +18,5 @@ cmake -S $SOURCE_DIR/XGC-Devel -B $BUILD_DIR/xgc-delta-f \
  -DCMAKE_EXE_LINKER_FLAGS="-L${OLCF_ROCM_ROOT}/lib -lamdhip64" \
  -DUSE_GPU_AWARE_MPI=ON
 
-cmake --build $BUILD_DIR/xgc-delta-f --target xgc-es-cpp-gpu
+cmake --build $BUILD_DIR/xgc-delta-f --target xgc-es-cpp-gpu -j 8
 cd $CURDIR
