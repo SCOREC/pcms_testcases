@@ -16,7 +16,9 @@ cmake -S $SOURCE_DIR/XGC-Devel -B $BUILD_DIR/xgc-total-f \
  -DCMAKE_Fortran_COMPILER=`which mpifort`\
  -DCMAKE_CXX_FLAGS="-I${OLCF_ROCM_ROOT}/include  -munsafe-fp-atomics" \
  -DCMAKE_EXE_LINKER_FLAGS="-L${OLCF_ROCM_ROOT}/lib -lamdhip64" \
- -DUSE_GPU_AWARE_MPI=ON
+ -DUSE_GPU_AWARE_MPI=ON \
+ -DADIOS2_DIR=$BUILD_DIR/adios2/install/lib64/cmake/adios2 \
+ -DKokkos_DIR=$BUILD_DIR/kokkos/install/lib64/cmake/Kokkos/
 
 cmake --build $BUILD_DIR/xgc-total-f --target xgc-es-cpp-gpu -j 8
 cd $CURDIR

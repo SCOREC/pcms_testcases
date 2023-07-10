@@ -23,5 +23,5 @@ export HIP_DEVICE_LIB_PATH=${ROCM_PATH}/amdgcn/bitcode
 export HIP_PLATFORM=amd
 export HIP_COMPILER=clang
 export HIPCC_COMPILE_FLAGS_APPEND="$HIPCC_COMPILE_FLAGS_APPEND --rocm-path=${ROCM_PATH}"
-export XGC_PLATFORM=frontier
+export XGC_PLATFORM=generic
 
