@@ -9,9 +9,9 @@ cd $SOURCE_DIR
 
 cmake -S $SOURCE_DIR/pcms -B $BUILD_DIR/pcms \
  -DCMAKE_INSTALL_PREFIX=$BUILD_DIR/pcms/install \
- -DCMAKE_CXX_COMPILER=`which mpicxx` \
- -DCMAKE_C_COMPILER=`which mpicc` \
- -DCMAKE_Fortran_COMPILER=`which mpifort`\
+ -DCMAKE_CXX_COMPILER=CC \
+ -DCMAKE_C_COMPILER=cc \
+ -DCMAKE_Fortran_COMPILER=ftn\
  -DMPIEXEC_EXECUTABLE=`which srun` \
  -DCMAKE_BUILD_TYPE=Release \
  -DCatch2_DIR=$MYDEPS/Catch2/install/lib64/cmake/Catch2/ \
@@ -22,9 +22,7 @@ cmake -S $SOURCE_DIR/pcms -B $BUILD_DIR/pcms \
  -DMPIEXEC_EXECUTABLE=`which srun` \
  -DBUILD_TESTING=OFF \
  -DADIOS2_DIR=$BUILD_DIR/adios2/install/lib64/cmake/adios2 \
- -DKokkos_DIR=$BUILD_DIR/kokkos/install/lib64/cmake/Kokkos/ \
- -DCMAKE_CXX_FLAGS="-I${OLCF_ROCM_ROOT}/include  -munsafe-fp-atomics" \
- -DCMAKE_EXE_LINKER_FLAGS="-L${OLCF_ROCM_ROOT}/lib -lamdhip64"
+ -DKokkos_DIR=$BUILD_DIR/kokkos/install/lib64/cmake/Kokkos/
 
 cmake --build $BUILD_DIR/pcms/ -j8 --target install
 cd $CURDIR
