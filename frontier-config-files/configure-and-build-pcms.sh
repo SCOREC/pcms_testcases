@@ -22,7 +22,9 @@ cmake -S $SOURCE_DIR/pcms -B $BUILD_DIR/pcms \
  -DMPIEXEC_EXECUTABLE=`which srun` \
  -DBUILD_TESTING=OFF \
  -DADIOS2_DIR=$BUILD_DIR/adios2/install/lib64/cmake/adios2 \
- -DKokkos_DIR=$BUILD_DIR/kokkos/install/lib64/cmake/Kokkos/
+ -DKokkos_DIR=$BUILD_DIR/kokkos/install/lib64/cmake/Kokkos/ \
+ -DCMAKE_CXX_FLAGS="-I${OLCF_ROCM_ROOT}/include  -munsafe-fp-atomics" \
+ -DCMAKE_EXE_LINKER_FLAGS="-L${OLCF_ROCM_ROOT}/lib -lamdhip64"
 
 cmake --build $BUILD_DIR/pcms/ -j8 --target install
 cd $CURDIR

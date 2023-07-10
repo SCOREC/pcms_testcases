@@ -15,7 +15,9 @@ cmake -S $SOURCE_DIR/kokkos-fortran-interop -B $BUILD_DIR/flcl \
   -DCMAKE_Fortran_COMPILER=`which mpifort`\
 	-DBUILD_TESTING=OFF \
 	-DFLCL_BUILD_TESTS=OFF \
-	-DFLCL_BUILD_EXAMPLE=OFF
+	-DFLCL_BUILD_EXAMPLE=OFF \
+  -DCMAKE_CXX_FLAGS="-I${OLCF_ROCM_ROOT}/include  -munsafe-fp-atomics" \
+  -DCMAKE_EXE_LINKER_FLAGS="-L${OLCF_ROCM_ROOT}/lib -lamdhip64"
 
 
 cmake --build $BUILD_DIR/flcl/ -j8 --target install

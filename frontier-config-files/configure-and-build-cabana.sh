@@ -15,6 +15,8 @@ cmake -S $SOURCE_DIR/cabana -B $BUILD_DIR/cabana \
  -DCabana_ENABLE_CAJITA=OFF \
  -DCabana_ENABLE_TESTING=OFF \
  -DCabana_ENABLE_EXAMPLES=OFF \
+ -DCMAKE_CXX_FLAGS="-I${OLCF_ROCM_ROOT}/include  -munsafe-fp-atomics" \
+ -DCMAKE_EXE_LINKER_FLAGS="-L${OLCF_ROCM_ROOT}/lib -lamdhip64"
 
 
 cmake --build $BUILD_DIR/cabana -j 8 --target install
