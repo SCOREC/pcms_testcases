@@ -6,7 +6,6 @@ cd $BUILD_DIR
 
 git clone -b release https://gitlab.com/petsc/petsc.git petsc
 cd petsc
-#cp $CURDIR/configure-petsc.py $BUILD_DIR/petsc
 
 echo "#!/usr/bin/python
 if __name__ == '__main__':
@@ -25,7 +24,7 @@ if __name__ == '__main__':
     '--with-cxx=CC',
     '--with-cxxlib-autodetect=0',
     '--with-debugging=0',
-    '--with-fc=0',
+    '--with-fc=ftn',
     '--with-shared-libraries=0',
     '--with-static-libraries=1',
     '--with-x=0',
@@ -37,14 +36,17 @@ if __name__ == '__main__':
   ]
   configure.petsc_configure(configure_options)" >configure-petsc.py
 
+ # '--download-f2cblaslapack',
  #'CXXOPTFLAGS=-g -fast',
  #'HIPOPTFLAGS=-Ofast --amdgpu-target=gfx906,gfx908',
  #'FOPTFLAGS=-g -fast',
 
 
-ls
+echo "CONFIGURE PETSC"
 python3 configure-petsc.py $SOURCE_DIR $BUILD_DIR
-make PETSC_DIR=$BUILD_DIR/petsc PETSC_ARCH=arch-linux-c-opt all
-make PETSC_DIR=$BUILD_DIR/petsc PETSC_ARCH=arch-linux-c-opt install
+echo "BUILD PETSC"
+make PETSC_DIR=$BUILD_DIR/petsc PETSC_ARCH=arch-linux-c-opt all -j 8
+#echo "INSTALL PETSC"
+#make PETSC_DIR=$BUILD_DIR/petsc PETSC_ARCH=arch-linux-c-opt install
 
 cd $CURDIR

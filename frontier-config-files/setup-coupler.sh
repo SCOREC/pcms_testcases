@@ -21,9 +21,10 @@ source $DIR/configure-and-build-petsc.sh $SOURCE_DIR $BUILD_DIR && \
 source $DIR/configure-and-build-adios2.sh $SOURCE_DIR $BUILD_DIR && \
 source $DIR/configure-and-build-omega-h.sh $SOURCE_DIR $BUILD_DIR && \
 source $DIR/configure-and-build-redev.sh $SOURCE_DIR $BUILD_DIR && \
-source $DIR/configure-and-build-pcms.sh $SOURCE_DIR $BUILD_DIR && \
+source $DIR/configure-and-build-pcms.sh $SOURCE_DIR $BUILD_DIR #&& \
 source $DIR/configure-and-build-coupled-xgc-deltaf.sh $SOURCE_DIR $BUILD_DIR && \
-source $DIR/configure-and-build-coupled-xgc-totalf.sh $SOURCE_DIR $BUILD_DIR
+#source $DIR/configure-and-build-coupled-xgc-totalf.sh $SOURCE_DIR $BUILD_DIR
+echo "done"
 #
 #
 #cd $DIR

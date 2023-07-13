@@ -2,10 +2,12 @@ module reset
 module unload perftools-base
 module load cmake
 module load PrgEnv-amd
+module swap amd amd/5.4.3
 #module swap amd amd/5.2.0
 #module swap cray-mpich cray-mpich/8.1.25
 module load craype-accel-amd-gfx90a
 export CRAYPE_LINK_TYPE=dynamic
+export MPICH_GPU_SUPPORT_ENABLED=1
 #export PATH=${CRAY_MPICH_PREFIX}/bin:${PATH}
 #export PATH=${ROCM_COMPILER_PATH}/bin:${PATH}
 #export MPICH_SMP_SINGLE_COPY_MODE=NONE
