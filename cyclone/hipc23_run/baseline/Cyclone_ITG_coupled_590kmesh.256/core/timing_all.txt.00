@@ -1,0 +1,422 @@
+
+************ PROCESS      0 (     0) ************
+
+$Id: gptl.c,v 1.157 2011-03-28 20:55:18 rosinski Exp $
+GPTL was built with THREADED_OMP
+HAVE_MPI was true
+  HAVE_COMM_F2C was true
+  ENABLE_PMPI was false
+HAVE_PAPI was false
+Underlying timing routine was MPI_Wtime.
+Per-call utr overhead est: 3.5036e-08 sec.
+If overhead stats are printed, roughly half the estimated number is
+embedded in the wallclock stats for each timer.
+Print method was most_frequent.
+If a '%_of' field is present, it is w.r.t. the first timer for thread 0.
+If a 'e6_per_sec' field is present, it is in millions of PAPI counts per sec.
+
+A '*' in column 1 below means the timer had multiple parents, though the
+values printed are for all calls.
+Further down the listing may be more detailed information about multiple
+parents. Look for 'Multiple parent info'
+
+Stats for thread 0:
+                                                          On  Called Recurse   Wallclock          max          min     UTR Overhead 
+  "TOTAL"                                                  -       1    -     680.452026   680.452026   680.452026         0.000000 
+    "PETSC_INIT"                                           -       1    -       4.463320     4.463320     4.463320         0.000000 
+    "INIT"                                                 -       1    -      53.757511    53.757511    53.757511         0.000000 
+      "i:ADIOS2_INIT"                                      -       1    -       0.002387     0.002387     0.002387         0.000000 
+      "i:SETUP"                                            -       1    -      53.754711    53.754711    53.754711         0.000000 
+        "i:READ_INPUT"                                     -       1    -       0.012594     0.012594     0.012594         0.000000 
+        "i:POST_PROCESS_INPUT"                             -       2    -       0.024605     0.023102     0.001503         0.000000 
+        "i:INIT_GRID"                                      -       1    -      11.307607    11.307607    11.307607         0.000000 
+          "i:INIT_TRIANGLE"                                -       1    -       0.151551     0.151551     0.151551         0.000000 
+          "i:INIT_GRADIENT_MAT"                            -       1    -       2.405735     2.405735     2.405735         0.000000 
+          "i:GET_DRIFT"                                    -       1    -       0.087260     0.087260     0.087260         0.000000 
+          "i:CALC_GEN_THETA_PSI"                           -       1    -       3.436708     3.436708     3.436708         0.000000 
+            "i:CALC_GEN_THETA_PSI_FIRST_PART"              -       1    -       0.003470     0.003470     0.003470         0.000000 
+            "i:CALC_GEN_THETA_PSI_LENGTH"                  -       1    -       0.000002     0.000002     0.000002         0.000000 
+            "i:CALC_GEN_THETA_PSI_POL_ANGLE"               -       1    -       3.420395     3.420395     3.420395         0.000000 
+            "i:SOL_FOURIER_WIN"                            -       1    -       0.000002     0.000002     0.000002         0.000000 
+            "i:GRID_SPL_IDX_SPL_COEF"                      -       1    -       0.012779     0.012779     0.012779         0.000000 
+            "i:FFT_PARALLEL_INIT"                          -       1    -       0.000004     0.000004     0.000004         0.000000 
+          "i:INIT_POL_SMOOTH_MAT"                          -       1    -       5.225636     5.225636     5.225636         0.000000 
+          "i:INIT_WALL"                                    -       1    -       0.000022     0.000022     0.000022         0.000000 
+        "i:INIT_KSP_COMM"                                  -       1    -       0.000439     0.000439     0.000439         0.000000 
+        "i:PSN_MEM_ALLOC"                                  -       1    -       0.044621     0.044621     0.044621         0.000000 
+        "i:EXTEND_BOUNDARY"                                -       1    -       0.063929     0.063929     0.063929         0.000000 
+        "i:INIT_FF"                                        -       1    -       2.403436     2.403436     2.403436         0.000000 
+        "i:DIAG_1D_INIT"                                   -       1    -       0.000118     0.000118     0.000118         0.000000 
+        "i:SETUP_GET_VOLUME"                               -       1    -       7.414840     7.414840     7.414840         0.000000 
+          "i:GET_VOLUME_RED"                               -       1    -       0.167638     0.167638     0.167638         0.000000 
+        "i:NEUTRAL_INIT"                                   -       1    -       0.000008     0.000008     0.000008         0.000000 
+        "i:INIT_WDMCPL"                                    -       1    -       1.261484     1.261484     1.261484         0.000000 
+        "i:INIT_WDMCPL_FIELD"                              -       1    -       1.568975     1.568975     1.568975         0.000000 
+        "i:ALLOCATE_TR_P_SAVE"                             -       1    -       0.018310     0.018310     0.018310         0.000000 
+        "i:LOAD"                                           -       1    -       7.188392     7.188392     7.188392         0.000000 
+        "i:DEALLOCATE_TR_P_SAVE"                           -       1    -       0.008360     0.008360     0.008360         0.000000 
+        "i:DUMP_GRID"                                      -       1    -       0.237539     0.237539     0.237539         0.000000 
+        "i:SETUP_CONV_GRID_INIT"                           -       1    -       0.129404     0.129404     0.129404         0.000000 
+        "i:CALC_MAG_DRIFT_FLUX_AVG"                        -       1    -       0.007721     0.007721     0.007721         0.000000 
+        "i:INIT_POISSON"                                   -       1    -      17.568056    17.568056    17.568056         0.000000 
+          "i:POISSON_INIT: TEMP"                           -       1    -       0.002429     0.002429     0.002429         0.000000 
+          "i:POISSON_INIT: PRIVATE"                        -       1    -       1.907101     1.907101     1.907101         0.000000 
+            "i:POISSON_INIT: SOLVER_DATA"                  -       1    -       0.086823     0.086823     0.086823         0.000000 
+              "i:POISSON_INIT_DATA"                        -       1    -       0.086811     0.086811     0.086811         0.000000 
+            "i:POISSON_INIT: SIMPLE"                       y       0    -       0.000000     0.000000     0.000000         0.000000 
+              "i:POISSON_INIT: POISSON00"                  -       1    -       0.811410     0.811410     0.811410         0.000000 
+*               "i:HELM_SOLVER_INIT"                       -       2    -       1.817082     1.005846     0.811236         0.000000 
+                  "i:HELM_SOLVER_INIT: CREATE"             -       2    -       0.788819     0.408443     0.380376         0.000000 
+                  "i:HELM_SOLVER_INIT: HELM"               -       5    -       0.654514     0.140413     0.119191         0.000000 
+                  "i:HELM_SOLVER_INIT: KSP_CREATE"         -       2    -       0.358625     0.349571     0.009054         0.000000 
+              "i:POISSON_INIT: POISSON"                    -       1    -       1.008829     1.008829     1.008829         0.000000 
+      "i:sync1_t_prf"                                      -       1    -       0.264637     0.264637     0.264637         0.000000 
+      "i:t_prf"                                            -       1    -       1.185607     1.185607     1.185607         0.000000 
+      "i:sync2_t_prf"                                      -       1    -       0.000016     0.000016     0.000016         0.000000 
+      "INIT_CPP_OBJECTS"                                   -       1    -       0.020934     0.020934     0.020934         0.000000 
+      "SETUP_POISSON"                                      -       1    -       0.000001     0.000001     0.000001         0.000000 
+      "OUTPUT_BFIELD"                                      -       1    -       0.006865     0.006865     0.006865         0.000000 
+      "DUMP_BFIELD"                                        -       1    -       0.115178     0.115178     0.115178         0.000000 
+      "CHARGEE_BACKGROUND"                                 -       1    -       0.000667     0.000667     0.000667         0.000000 
+      "FIRST"                                              -       1    -       2.180187     2.180187     2.180187         0.000000 
+*       "REBALANCE"                                        -      11    -       2.184078     2.180169     0.000140         0.000001 
+          "LOAD_BAL_REBAL"                                 -      11    -       2.184069     2.180168     0.000139         0.000001 
+            "LOAD_BAL_SET_NEW"                             -       1    -       0.636486     0.636486     0.636486         0.000000 
+              "count_ptl_per_node"                         -       1    -       0.603324     0.603324     0.603324         0.000000 
+*               "copy_ptl_to_device"                       -      21    -       0.001217     0.000191     0.000012         0.000001 
+              "SET_WEIGHTS"                                -       1    -       0.033047     0.033047     0.033047         0.000000 
+                "GLOBAL_WT_CALC_SUM_ION"                   -       1    -       0.014529     0.014529     0.014529         0.000000 
+                "SET_WTS_PART_OUTPUT"                      -       1    -       0.000013     0.000013     0.000013         0.000000 
+            "LOAD_BAL_REDIST"                              -       1    -       1.543663     1.543663     1.543663         0.000000 
+*             "SHIFT_R"                                    -       2    -       2.653600     1.543661     1.109939         0.000000 
+*               "SHIFT_I"                                  -      22    -      55.647194     4.523947     1.091625         0.000002 
+                  "si:copy_ptl_to_device"                  -      22    -       0.000296     0.000060     0.000005         0.000002 
+                  "si:transpose_and_shift"                 -      22    -      21.068245     1.125752     0.000036         0.000002 
+*                   "si:commit_type"                       -      32    -       0.000116     0.000009     0.000001         0.000002 
+*                   "si:transpose_for_send_buffer"         -      32    -       1.390808     0.055384     0.000012         0.000002 
+*                   "si:allocate_buffer"                   -      64    -       0.001444     0.000073     0.000000         0.000004 
+*                   "si:copy_to_send_buffer"               -      32    -       2.102015     0.083459     0.000002         0.000002 
+*                   "si:local_ptl_resize"                  -      32    -       0.114282     0.069795     0.000000         0.000002 
+*                   "si:Order_communication"               -      32    -       0.000193     0.000009     0.000002         0.000002 
+*                   "si:MPI_shift_irecv_send"              -      32    -      21.602514     0.863811     0.000000         0.000002 
+*                   "si:transpose_AoS_to_AoSoA"            -      32    -       0.898521     0.054951     0.000003         0.000002 
+                  "si:copy_ptl_to_host"                    -      22    -       0.000014     0.000007     0.000000         0.000002 
+                  "si:transpose_and_shift_ph0"             -      10    -       7.178246     0.858785     0.635837         0.000001 
+            "MAIN_LOOP_RED"                                -      10    -       0.003748     0.000528     0.000116         0.000001 
+      "f:sync1_t_prf"                                      -       1    -       0.014864     0.014864     0.014864         0.000000 
+      "f:t_prf"                                            -       1    -       1.143273     1.143273     1.143273         0.000000 
+      "f:sync2_t_prf"                                      -       1    -       0.000016     0.000016     0.000016         0.000000 
+      "MAIN_LOOP"                                          -      10    -     597.166199   118.003082    45.987740         0.000001 
+        "MEM_USAGE"                                        -      10    -       0.000005     0.000001     0.000000         0.000001 
+*       "SOLVE_FOR_FIELDS"                                 -      20    -     443.084015    80.919601    10.748191         0.000001 
+          "CHARGEI"                                        -      20    -      18.086996     1.086423     0.809393         0.000001 
+*           "copy_ptl_to_device"                           -      21    -       0.001217     0.000191     0.000012         0.000001 
+            "GYROMAT_SETUP"                                -      20    -       0.749593     0.046158     0.023466         0.000001 
+            "FF_SETUP"                                     -      20    -       0.041132     0.002718     0.001363         0.000001 
+            "charge_irho0"                                 -      20    -       2.017342     0.263539     0.017712         0.000001 
+            "ga_density_field"                             -      20    -       0.657722     0.038529     0.023727         0.000001 
+              "charge_ga_red"                              -      20    -       0.232743     0.014140     0.009851         0.000001 
+              "charge_ga_mat"                              -      20    -       0.265292     0.015316     0.008629         0.000001 
+              "charge_ga_sr"                               -      20    -       0.122835     0.014666     0.002009         0.000001 
+              "charge_ga_sum"                              -      20    -       0.036557     0.002349     0.001589         0.000001 
+            "charge_ga_cnvrt"                              -      20    -       0.104742     0.005857     0.004760         0.000001 
+            "avg_and_bcast"                                -      20    -       0.330924     0.133143     0.000874         0.000001 
+*             "charge_ga_red_bcast"                        -      40    -       0.024336     0.000729     0.000383         0.000003 
+            "charge_ga_sr_red"                             -      20    -       0.075022     0.018842     0.001389         0.000001 
+          "full:POISSON_AXISYM"                            -      20    -      10.515563     0.527586     0.525198         0.000001 
+            "full:POISSON_AXISYM_RHS"                      -      20    -       0.039888     0.002068     0.001942         0.000001 
+            "full:POISSON_AXISYM_ITER"                     -      20    -      10.375045     0.520460     0.518232         0.000001 
+              "full:POISSON_00MODE_SOLVE"                  -     200    -       9.990116     0.051884     0.049828         0.000014 
+*               "full:PETSC_SOLVE"                         -     220    -      10.684278     0.090439     0.044385         0.000015 
+              "full:POISSON_00MODE_BCAST"                  -      20    -       0.007645     0.000463     0.000372         0.000001 
+            "full:POISSON_AXISYM_POST_PROCESS"             -      20    -       0.100489     0.005062     0.005006         0.000001 
+          "full:POISSON_TURB"                              -      40     20     2.219636     0.114573     0.000000         0.000003 
+            "full:POISSON_TURB_RHS"                        -      20    -       0.012647     0.000636     0.000629         0.000001 
+            "full:POISSON_TURB_SOLVE"                      -      40     20     1.937232     0.098291     0.000000         0.000003 
+              "full:POISSON_TURB_BCAST"                    -      20    -       0.007724     0.000453     0.000371         0.000001 
+            "full:POISSON_TURB_POST_PROCESS"               -      20    -       0.269668     0.027049     0.011500         0.000001 
+              "full:POISSON_TURB_FOURIER_FILT"             -      20    -       0.186706     0.019375     0.007809         0.000001 
+              "full:POISSON_SR_POT"                        -      20    -       0.061124     0.006537     0.002412         0.000001 
+          "GET_POT_GRAD"                                   -      20    -       5.162791     0.272910     0.237853         0.000001 
+            "GET_POT_GRAD_EXCL_DESTR"                      -      20    -       4.641048     0.244587     0.215919         0.000001 
+              "GET_POT_GRAD_ALLOC_VIEWS"                   -      20    -       1.496376     0.075971     0.069188         0.000001 
+                "GET_POT_GRAD_GYROMAT_SETUP"               -      20    -       0.864093     0.044041     0.037817         0.000001 
+                "GET_POT_GRAD_MAT_SETUP"                   -      20    -       0.512173     0.025908     0.024762         0.000001 
+                "GET_POT_GRAD_FF_SETUP"                    -      20    -       0.050915     0.002650     0.002310         0.000001 
+                "GET_POT_GRAD_GPTX_SETUP"                  -      20    -       0.067956     0.003494     0.003249         0.000001 
+              "GET_POT_GRAD_PHI"                           -      20    -       3.144578     0.169216     0.145985         0.000001 
+                "GET_POT_GRAD_SEND_POT"                    -      20    -       0.000001     0.000000     0.000000         0.000001 
+                "GET_POT_GRADIENT"                         -      20    -       0.370169     0.019891     0.017525         0.000001 
+                "GET_POT_GRADPAR"                          -      20    -       0.055446     0.002934     0.002460         0.000001 
+                "GET_POT_CNVRT"                            -      20    -       0.142355     0.007525     0.006756         0.000001 
+                "TRANSP_FOR_GYROAVG"                       -      20    -       0.033996     0.001811     0.001457         0.000001 
+                "GET_POT_MAT_MULT"                         -      20    -       0.655409     0.033265     0.030936         0.000001 
+                "GET_POT_BCAST"                            -      20    -       1.425853     0.082978     0.060411         0.000001 
+                "GET_POT_IDX_REORD"                        -      20    -       0.433447     0.023043     0.019214         0.000001 
+                  "GET_POT_GRAD_TRANSPS"                   -      20    -       0.322286     0.016989     0.012903         0.000001 
+                  "GET_POT_GRAD_TRANSPS_SEND"              -      20    -       0.000001     0.000000     0.000000         0.000001 
+        "IPC_LOOP"                                         -      20    -     397.335876    58.514378     7.636662         0.000001 
+          "ipc1:PUSH"                                      -      10    -      53.407410     6.023800     4.606430         0.000001 
+            "ipc1:copy_for_push"                           -      10    -       0.000715     0.000131     0.000061         0.000001 
+            "ipc1:Copy_rho_ff_fields_to_device"            -      10    -       0.000002     0.000001     0.000000         0.000001 
+            "ipc1:PUSHI"                                   -      10    -      53.240910     6.006882     4.588740         0.000001 
+              "ipc1:copy_ptl_to_device"                    -      10    -       0.000106     0.000016     0.000007         0.000001 
+              "ipc1:SAVE_PTL"                              -      10    -       0.551110     0.064751     0.051621         0.000001 
+              "ipc1:copy_ptl_from_device"                  -      10    -       0.000009     0.000002     0.000000         0.000001 
+              "ipc1:Wait_for_push"                         -      10    -       0.000012     0.000002     0.000001         0.000001 
+            "ipc1:copy_from_push"                          -      10    -       0.004591     0.000598     0.000431         0.000001 
+          "DIAGNOSIS"                                      -      20    -       1.582271     0.359930     0.000001         0.000001 
+            "DIAG_1D_OUTPUT"                               -       5    -       0.434323     0.126425     0.065065         0.000000 
+            "DIAG_3D"                                      -       5    -       1.147525     0.250257     0.206956         0.000000 
+              "DIAG_3D_ADIOS"                              -       5    -       1.135142     0.247630     0.203971         0.000000 
+                "DIAG_3D_ADIOS_STEPEND"                    -       5    -       0.736572     0.168474     0.124657         0.000000 
+          "SHIFT"                                          -      20    -      53.328915     4.541735     1.915438         0.000001 
+*           "SHIFT_I"                                      -      22    -      55.647194     4.523947     1.091625         0.000002 
+              "si:copy_ptl_to_device"                      -      22    -       0.000296     0.000060     0.000005         0.000002 
+              "si:transpose_and_shift"                     -      22    -      21.068245     1.125752     0.000036         0.000002 
+*               "si:commit_type"                           -      32    -       0.000116     0.000009     0.000001         0.000002 
+*               "si:transpose_for_send_buffer"             -      32    -       1.390808     0.055384     0.000012         0.000002 
+*               "si:allocate_buffer"                       -      64    -       0.001444     0.000073     0.000000         0.000004 
+*               "si:copy_to_send_buffer"                   -      32    -       2.102015     0.083459     0.000002         0.000002 
+*               "si:local_ptl_resize"                      -      32    -       0.114282     0.069795     0.000000         0.000002 
+*               "si:Order_communication"                   -      32    -       0.000193     0.000009     0.000002         0.000002 
+*               "si:MPI_shift_irecv_send"                  -      32    -      21.602514     0.863811     0.000000         0.000002 
+*               "si:transpose_AoS_to_AoSoA"                -      32    -       0.898521     0.054951     0.000003         0.000002 
+              "si:copy_ptl_to_host"                        -      22    -       0.000014     0.000007     0.000000         0.000002 
+              "si:transpose_and_shift_ph0"                 -      10    -       7.178246     0.858785     0.635837         0.000001 
+          "ipc2:PUSH"                                      -      10    -      45.759312     4.582104     4.565853         0.000001 
+            "ipc2:copy_for_push"                           -      10    -       0.000652     0.000068     0.000062         0.000001 
+            "ipc2:Copy_rho_ff_fields_to_device"            -      10    -       0.000002     0.000001     0.000000         0.000001 
+            "ipc2:PUSHI"                                   -      10    -      45.593990     4.566123     4.550100         0.000001 
+              "ipc2:copy_ptl_to_device"                    -      10    -       0.000107     0.000014     0.000009         0.000001 
+              "ipc2:RESTORE_PTL"                           -      10    -       0.504139     0.053522     0.043465         0.000001 
+              "ipc2:copy_ptl_from_device"                  -      10    -       0.000007     0.000001     0.000000         0.000001 
+              "ipc2:Wait_for_push"                         -      10    -       0.000008     0.000001     0.000001         0.000001 
+            "ipc2:copy_from_push"                          -      10    -       0.004237     0.000436     0.000417         0.000001 
+*       "REBALANCE"                                        -      11    -       2.184078     2.180169     0.000140         0.000001 
+          "LOAD_BAL_REBAL"                                 -      11    -       2.184069     2.180168     0.000139         0.000001 
+            "LOAD_BAL_SET_NEW"                             -       1    -       0.636486     0.636486     0.636486         0.000000 
+              "count_ptl_per_node"                         -       1    -       0.603324     0.603324     0.603324         0.000000 
+*               "copy_ptl_to_device"                       -      21    -       0.001217     0.000191     0.000012         0.000001 
+              "SET_WEIGHTS"                                -       1    -       0.033047     0.033047     0.033047         0.000000 
+                "GLOBAL_WT_CALC_SUM_ION"                   -       1    -       0.014529     0.014529     0.014529         0.000000 
+                "SET_WTS_PART_OUTPUT"                      -       1    -       0.000013     0.000013     0.000013         0.000000 
+            "LOAD_BAL_REDIST"                              -       1    -       1.543663     1.543663     1.543663         0.000000 
+*             "SHIFT_R"                                    -       2    -       2.653600     1.543661     1.109939         0.000000 
+*               "SHIFT_I"                                  -      22    -      55.647194     4.523947     1.091625         0.000002 
+                  "si:copy_ptl_to_device"                  -      22    -       0.000296     0.000060     0.000005         0.000002 
+                  "si:transpose_and_shift"                 -      22    -      21.068245     1.125752     0.000036         0.000002 
+*                   "si:commit_type"                       -      32    -       0.000116     0.000009     0.000001         0.000002 
+*                   "si:transpose_for_send_buffer"         -      32    -       1.390808     0.055384     0.000012         0.000002 
+*                   "si:allocate_buffer"                   -      64    -       0.001444     0.000073     0.000000         0.000004 
+*                   "si:copy_to_send_buffer"               -      32    -       2.102015     0.083459     0.000002         0.000002 
+*                   "si:local_ptl_resize"                  -      32    -       0.114282     0.069795     0.000000         0.000002 
+*                   "si:Order_communication"               -      32    -       0.000193     0.000009     0.000002         0.000002 
+*                   "si:MPI_shift_irecv_send"              -      32    -      21.602514     0.863811     0.000000         0.000002 
+*                   "si:transpose_AoS_to_AoSoA"            -      32    -       0.898521     0.054951     0.000003         0.000002 
+                  "si:copy_ptl_to_host"                    -      22    -       0.000014     0.000007     0.000000         0.000002 
+                  "si:transpose_and_shift_ph0"             -      10    -       7.178246     0.858785     0.635837         0.000001 
+            "MAIN_LOOP_RED"                                -      10    -       0.003748     0.000528     0.000116         0.000001 
+      "sync1_t_prf"                                        -      10    -       1.373828     0.248801     0.069561         0.000001 
+*     "t_prf"                                              y      10    -       9.019762     0.991730     0.802776         0.000001 
+      "sync2_t_prf"                                        -      10    -       0.000114     0.000013     0.000009         0.000001 
+      "RESTART_WRITE"                                      -       1    -       6.354585     6.354585     6.354585         0.000000 
+        "MEM_CLEAN_RSTRT"                                  -       1    -       0.031924     0.031924     0.031924         0.000000 
+        "ADIOS_WRITE_RESTART"                              -       1    -       6.061200     6.061200     6.061200         0.000000 
+      "FINAL_WDMCPL_FIELD"                                 -       1    -       0.000011     0.000011     0.000011         0.000000 
+      "FINAL_WDMCPL"                                       -       1    -       0.013365     0.013365     0.013365         0.000000 
+      "FINALIZE"                                           -       1    -       0.004044     0.004044     0.004044         0.000000 
+
+Overhead sum =  0.000153 wallclock seconds
+Total calls  = 2190
+
+Stats for thread 1:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 2:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 3:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 4:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 5:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 6:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 7:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Same stats sorted by timer for threaded regions (for timers active on thread 0):
+Thd                                   On  Called Recurse   Wallclock          max          min     UTR Overhead 
+OVERHEAD.000 (wallclock seconds) =  0.000153
+OVERHEAD.001 (wallclock seconds) =         0
+OVERHEAD.002 (wallclock seconds) =         0
+OVERHEAD.003 (wallclock seconds) =         0
+OVERHEAD.004 (wallclock seconds) =         0
+OVERHEAD.005 (wallclock seconds) =         0
+OVERHEAD.006 (wallclock seconds) =         0
+OVERHEAD.007 (wallclock seconds) =         0
+OVERHEAD.SUM (wallclock seconds) =  0.000153
+
+Multiple parent info for thread 0:
+Columns are count and name for the listed child
+Rows are each parent, with their common child being the last entry, which is indented.
+Count next to each parent is the number of times it called the child.
+Count next to child is total number of times it was called by the listed parents.
+
+       1 i:POISSON_INIT: POISSON00       
+       1 i:POISSON_INIT: POISSON         
+       2   i:HELM_SOLVER_INIT              
+
+       1 FIRST                           
+      10 MAIN_LOOP                       
+      11   REBALANCE                       
+
+       1 count_ptl_per_node              
+      20 CHARGEI                         
+      21   copy_ptl_to_device              
+
+       1 LOAD_BAL_REDIST                 
+       1 INIT                            
+       2   SHIFT_R                         
+
+       2 SHIFT_R                         
+      20 SHIFT                           
+      22   SHIFT_I                         
+
+      22 si:transpose_and_shift          
+      10 si:transpose_and_shift_ph0      
+      32   si:commit_type                  
+
+      22 si:transpose_and_shift          
+      10 si:transpose_and_shift_ph0      
+      32   si:transpose_for_send_buffer    
+
+      44 si:transpose_and_shift          
+      20 si:transpose_and_shift_ph0      
+      64   si:allocate_buffer              
+
+      22 si:transpose_and_shift          
+      10 si:transpose_and_shift_ph0      
+      32   si:copy_to_send_buffer          
+
+      22 si:transpose_and_shift          
+      10 si:transpose_and_shift_ph0      
+      32   si:local_ptl_resize             
+
+      22 si:transpose_and_shift          
+      10 si:transpose_and_shift_ph0      
+      32   si:Order_communication          
+
+      22 si:transpose_and_shift          
+      10 si:transpose_and_shift_ph0      
+      32   si:MPI_shift_irecv_send         
+
+      22 si:transpose_and_shift          
+      10 si:transpose_and_shift_ph0      
+      32   si:transpose_AoS_to_AoSoA       
+
+      10 MAIN_LOOP                       
+      10 IPC_LOOP                        
+      20   SOLVE_FOR_FIELDS                
+
+      20 avg_and_bcast                   
+      20 CHARGEI                         
+      40   charge_ga_red_bcast             
+
+     200 full:POISSON_00MODE_SOLVE       
+      20 full:POISSON_TURB_SOLVE         
+     220   full:PETSC_SOLVE                
+
+      10 INIT                            
+       1 TOTAL                           
+      10   t_prf                           
+
+
+thread 0 had some hash collisions:
+hashtable[0][242] had 2 entries: SHIFT_R GET_POT_GRADIENT
+hashtable[0][601] had 2 entries: LOAD_BAL_SET_NEW sync2_t_prf
+hashtable[0][905] had 2 entries: i:INIT_WDMCPL GET_POT_MAT_MULT
+hashtable[0][1807] had 2 entries: i:DIAG_1D_INIT GLOBAL_WT_CALC_SUM_ION
+Total collisions thread 0 = 4
+Entry information:
+num_zero = 1886 num_one = 158 num_two = 4 num_more = 0
+Most = 2
+
+Thread 0 total memory usage = 35.576 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 2.808 KB
+
+Thread 1 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 2 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 3 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 4 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 5 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 6 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 7 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Total memory usage all threads = 264.952 KB
+
+Thread mapping:
+threadid_omp[0] = 0
+threadid_omp[1] = -1
+threadid_omp[2] = -1
+threadid_omp[3] = -1
+threadid_omp[4] = -1
+threadid_omp[5] = -1
+threadid_omp[6] = -1
+threadid_omp[7] = -1

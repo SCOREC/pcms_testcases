@@ -1,0 +1,30 @@
+Curve 0
+	 typeId = 0
+	 start location = 0
+	 end   location = 0
+	 number of points = 1
+	 Psi value = 0
+Curve 1
+	 typeId = 0
+	 start location = 1
+	 end   location = 1
+	 number of points = 32
+	 Psi value = 1
+Curve 2
+	 typeId = 0
+	 start location = 0
+	 end   location = 0
+	 number of points = 9
+	 Psi value = 0.112032
+Curve 3
+	 typeId = 0
+	 start location = 0
+	 end   location = 0
+	 number of points = 16
+	 Psi value = 0.371568
+Curve 4
+	 typeId = 0
+	 start location = 0
+	 end   location = 0
+	 number of points = 24
+	 Psi value = 0.69125

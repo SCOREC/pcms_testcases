@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+slurm*
+*.swp
+*~
+*.nfs*

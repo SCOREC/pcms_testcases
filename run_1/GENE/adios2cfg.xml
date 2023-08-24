@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<adios-config>
+    <io name="planes_file">
+        <engine type="BP3">
+        </engine>
+    </io>
+    <io name="field_file">
+        <engine type="BP4">
+        </engine>
+    </io>
+    <io name="mom_file">
+        <engine type="BP4">
+        </engine>
+    </io>
+    <io name="density_coupling">
+      <engine type="SST">
+        <parameter key="OpenTimeoutSecs" value="800">
+        </parameter>
+      </engine>
+    </io>
+    <io name="field_coupling">
+      <engine type="SST">
+        <parameter key="OpenTimeoutSecs" value="800">
+        </parameter>
+      </engine>
+    </io>
+    <io name="initial_density">
+        <engine type="BP3">
+        </engine>
+    </io>
+</adios-config>

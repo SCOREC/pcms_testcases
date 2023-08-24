@@ -1,0 +1,198 @@
+&sml_param
+sml_use_pade=.t.
+sml_marker_temp_factor=1.5D0
+sml_machine=0             ! 0 circular, 1:D3D, 
+!sml_node_file='gene_comp_case5_3mm_fix.node'
+!sml_ele_file='gene_comp_case5_3mm_fix.ele'
+!sml_node_file='EQDSK_V_3mm_FF_201rhotor_shift_n384.node' !'gene_comp_case5_3mm_FF_uniform_rhotor_n384.node'
+!sml_ele_file='EQDSK_V_3mm_FF_201rhotor_shift_n384.ele'   !'gene_comp_case5_3mm_FF_uniform_rhotor_n384.ele'
+!gene_comp_case5_3mm_FF_uniform_rhotor_n384.aif 
+sml_node_file='geqdsk_gene_comp_case5_fixed.eqd.node'
+sml_ele_file='geqdsk_gene_comp_case5_fixed.eqd.ele'
+sml_surf_file='geqdsk_gene_comp_case5_fixed.eqd.flx.aif'
+sml_f0_grid=.false.
+sml_pol_decomp=.false.
+sml_f0_grid_alpha=0.0000D0
+!sml_f0_alpha1=0.000D0
+!sml_f0_alpha2=0.0000D0
+sml_bfollow=1
+sml_nhybrid=1
+sml_co_cur_bt=.true.
+sml_special=0             ! 0: normal simulation, 1: single particle simulation
+sml_dt= 8.173341889537248e-04 !0.005D0            ! delta-t for one time step - unit of toroidal transit time. 
+sml_mstep=3200              ! total time step
+sml_deltaf=.true.        ! delta-f simulation switch - incomplete
+sml_turb_efield=.true.
+sml_electron_on=.false.
+sml_nphi_total=32
+sml_bounce=3              ! Particle motion boundary condition 
+                          ! 1 for edge simulation (including open field line region)
+                          ! 2 for core simulation (excluding open field line region)
+!!sml_limiter=0             ! Limiter on/off
+sml_fem_matrix=1
+sml_inpsi=0.01            ! inner boundary of simulation - unit of eq_x_psi
+sml_outpsi=0.9           ! outter boundary of simulation - unit of eq_x_psi
+sml_restart_write_period=10000
+sml_restart=.false.
+sml_deltaf_f0_mode=-2
+sml_guess_table_size=1000
+sml_00_efield=.true.
+sml_00_npsi=200
+sml_input_file_dir='.' !'/global/cscratch1/sd/jdominsk/XGC-1_inputs/'
+sml_bd_ext_delta2=0.01
+sml_bd_ext_delta1=-0.1
+sml_bd_ext_delta1H=0.01
+sml_bd_ext_delta2H=0.02
+sml_bd_ext_delta3=0.02
+sml_bd_ext_delta4=0.04
+sml_bounce_zero_weight=1
+sml_weight_max=2D0
+sml_rhomax= 1.2D-2
+sml_grid_nrho=4
+sml_wedge_n=4
+sml_ncycle_half=10
+sml_f_source_period=10
+sml_source=.false.
+sml_no_fp_in_f=.false.
+sml_poisson_solver_type=0
+!!sml_f0_1_ln=2.22
+!!sml_f0_1_lt=8
+!!sml_f0_1_lt_e=8
+sml_dwdt_exb_only=.t.
+sml_initial_deltaf_noise=0D-150
+!!SML_MODE_SELECT_ON =           1,
+!!SML_MODE_SELECT_N =            1,
+!sml_mode_select_mode = 1,
+!sml_mode_select_n    = 1,
+
+!sml_grad_psitheta=.true.
+!sml_extra_dwdt =T
+/
+
+&ptl_param
+ptl_mass_au=2D0             ! 1 for hydrogen, 2 for deutron
+ptl_charge_eu=1D0            ! ion charge
+ptl_num=    2000000             ! number of particle for simulation
+ptl_maxnum= 2500000
+/
+
+
+&eq_param ! Initial equilibrium profile - Tanh profile
+eq_filename='geqdsk_gene_comp_case5_fix.eqd'
+eq_den_shape=-1
+eq_den_file='den_gene_case5.prf'
+eq_den_v1=3.0D19          ! inside value of density m^-3
+eq_den_v2=2.0D19           ! outside value of density  m^-3
+eq_den_x1=0.975D0      ! pedestal center
+eq_den_x2=0.05D0    ! pedestal width
+eq_den_v3=4.5D19
+eq_den_x3=0D0
+eq_tempi_shape=-1
+eq_tempe_shape=-1
+eq_tempi_file='temp_gene_case5_fix.prf'
+eq_tempe_file='temp_gene_case5_fix.prf'
+eq_tempi_x1=0.97D0
+eq_tempe_x1=0.97D0
+eq_tempi_x2=0.07D0
+eq_tempe_x2=0.07D0
+eq_tempi_v1=7D3      ! ion temperature (inside) - eV
+eq_tempi_v2=1d2     ! ion temperature (outside) - eV
+eq_tempe_v1=7D3
+eq_tempe_v2=1D2
+eq_tempi_v3=5.7D3
+eq_tempi_x3=0D0
+eq_tempe_v3=5.7D3
+eq_tempe_x3=0D0
+/
+
+&col_param  ! Collision
+col_mode=0  ! 0 : off , 1 monte-carlo (non-conserving) 2: monte-carlo (conserving)
+/
+
+&diag_param ! diagnosis
+diag_1d_period=1
+diag_3d_period=20
+diag_1d_npsi=200
+diag_f0_period=500
+!diag_tavg_on=.false.
+diag_tracer_period=10000
+diag_3d_on=.true.
+/
+
+&neu_param            ! neutral collision
+neu_col_mode=0
+/
+
+&src_param
+src_narea=2
+src_period=10
+src_heat_power1=2.5D6
+src_pout1=0.05
+src_decay_width1=0.15
+src_pout2=0.90D0
+src_pin2=0.75D0
+src_decay_width2=0.06
+src_heat_power2=-2.5D6
+/
+
+&f0_param
+f0_nmu=31
+f0_nvp=15
+f0_smu_max=3.0
+f0_vp_max=3.0
+f0_col_change_weight=.false.
+f0_f_correction=.true.
+!!f0_smooth_df_width=1
+!!f0_smooth_df_sigma=1.25
+!!f0_smooth_df_on=.true.
+!!f0_f0g_grad_update=.true.
+!!f0_smooth_df_conserve=.false.
+!!f0_col_advanced_correction=.true.
+/
+
+&lim_param            ! limiter 
+/
+
+/
+&smooth_param
+smooth_mode_in=0
+smooth_H_mode_in=2
+smooth_H_n_in=1
+smooth_r1_n_in=2
+smooth_r1_d0_in=0.0042
+smooth_r1_type_in=1
+smooth_diag_mode_in=-1
+/
+
+
+&prof_inparam
+!!profile_papi_enable=.true.
+/
+
+&mon_param
+/
+&adios_param
+/
+&ptb_3db_param
+ptb_3db_on=.false.
+/
+&coupling_param
+/
+
+&cce_coupling_gene
+cce_side=1
+cce_folder='../coupling'
+cce_overlap_first_surface=200
+cce_overlap_last_surface=200
+cce_field_first_surface=12
+cce_field_last_surface=191
+cce_axis_overlap_first_surface=1
+cce_axis_overlap_last_surface=1
+cce_nbsurfaces=211
+/
+
+&cce_surfaces
+cce_surface_first_node(:)=1,2,9,21,39,64,95,132,176,226,283,346,415,491,573,661,756,857,965,1079,1199,1326,1459,1598,1744,1897,2056,2221,2393,2571,2755,2946,3143,3347,3557,3774,3997,4226,4462,4704,4952,5207,5468,5736,6010,6290,6577,6870,7170,7476,7883,8352,8865,9420,10012,10638,11297,11989,12713,13469,14260,15081,15937,16831,17764,18742,19791,20898,22010,23128,24252,25381,26516,27657,28804,29958,31118,32285,33458,34638,35825,37019,38220,39428,40644,41867,43098,44336,45582,46836,48098,49368,50647,51935,53231,54536,55850,57173,58505,59847,61198,62559,63930,65310,66700,68101,69512,70934,72367,73810,75264,76729,78206,79694,81194,82706,84230,85766,87314,88875,90449,92036,93636,95249,96875,98515,100169,101837,103519,105215,106926,108652,110393,112149,113921,115708,117511,119330,121165,123017,124885,126770,128672,130592,132530,134485,136458,138450,140460,142489,144459,146395,148313,150219,152115,154005,155889,157771,159649,161527,163404,165280,167157,169034,170913,172792,174674,176558,178444,180333,182224,184119,186017,187919,189824,191733,193645,195562,197483,199409,201337,203272,205212,207157,209105,211059,213018,214982,216951,218924,220902,222885,224875,226871,228873,230881,232894,234913,236939,238970,241009,243053,245105,247163,249229,251301,253380,255466,257559,259660,261768
+cce_surface_last_node(:)=1,8,20,38,63,94,131,175,225,282,345,414,490,572,660,755,856,964,1078,1198,1325,1458,1597,1743,1896,2055,2220,2392,2570,2754,2945,3142,3346,3556,3773,3996,4225,4461,4703,4951,5206,5467,5735,6009,6289,6576,6869,7169,7475,7882,8351,8864,9419,10011,10637,11296,11988,12712,13468,14259,15080,15936,16830,17763,18741,19790,20897,22009,23127,24251,25380,26515,27656,28803,29957,31117,32284,33457,34637,35824,37018,38219,39427,40643,41866,43097,44335,45581,46835,48097,49367,50646,51934,53230,54535,55849,57172,58504,59846,61197,62558,63929,65309,66699,68100,69511,70933,72366,73809,75263,76728,78205,79693,81193,82705,84229,85765,87313,88874,90448,92035,93635,95248,96874,98514,100168,101836,103518,105214,106925,108651,110392,112148,113920,115707,117510,119329,121164,123016,124884,126769,128671,130591,132529,134484,136457,138449,140459,142488,144458,146394,148312,150218,152114,154004,155888,157770,159648,161526,163403,165279,167156,169033,170912,172791,174673,176557,178443,180332,182223,184118,186016,187918,189823,191732,193644,195561,197482,199408,201336,203271,205211,207156,209104,211058,213017,214981,216950,218923,220901,222884,224874,226870,228872,230880,232893,234912,236938,238969,241008,243052,245104,247162,249228,251300,253379,255465,257558,259659,261767,263883
+/
+

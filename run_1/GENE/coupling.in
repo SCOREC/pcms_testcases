@@ -1,0 +1,17 @@
+&coupling                                                                        
+coupled=.T.
+use_files=F
+folder='../coupling'
+first_surface=12
+first_surface_coupling_axis=5
+last_surface_coupling_axis=5
+first_surface_coupling= 200
+last_surface_coupling= 200
+last_surface=191
+all_surface_number=211 !next is LCFS
+first_node=346
+last_node=222884
+dt_coupling=6.398773219188700e-08
+write_fields=10
+write_planes=20
+/

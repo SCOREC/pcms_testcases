@@ -1,0 +1,194 @@
+
+************ PROCESS      0 (     0) ************
+
+$Id: gptl.c,v 1.157 2011-03-28 20:55:18 rosinski Exp $
+GPTL was built with THREADED_OMP
+HAVE_MPI was true
+  HAVE_COMM_F2C was true
+  ENABLE_PMPI was false
+HAVE_PAPI was false
+Underlying timing routine was MPI_Wtime.
+Per-call utr overhead est: 3.5218e-08 sec.
+If overhead stats are printed, roughly half the estimated number is
+embedded in the wallclock stats for each timer.
+Print method was most_frequent.
+If a '%_of' field is present, it is w.r.t. the first timer for thread 0.
+If a 'e6_per_sec' field is present, it is in millions of PAPI counts per sec.
+
+A '*' in column 1 below means the timer had multiple parents, though the
+values printed are for all calls.
+Further down the listing may be more detailed information about multiple
+parents. Look for 'Multiple parent info'
+
+Stats for thread 0:
+                                                      On  Called Recurse   Wallclock          max          min     UTR Overhead 
+  "TOTAL"                                              y       0    -       0.000000     0.000000     0.000000         0.000000 
+    "PETSC_INIT"                                       -       1    -       3.706486     3.706486     3.706486         0.000000 
+    "INIT"                                             -       1    -      85.485458    85.485458    85.485458         0.000000 
+      "i:ADIOS2_INIT"                                  -       1    -       0.003212     0.003212     0.003212         0.000000 
+      "i:SETUP"                                        -       1    -      85.481949    85.481949    85.481949         0.000000 
+        "i:READ_INPUT"                                 -       1    -       0.012507     0.012507     0.012507         0.000000 
+        "i:POST_PROCESS_INPUT"                         -       2    -       0.016174     0.014931     0.001243         0.000000 
+        "i:INIT_GRID"                                  -       1    -      14.843007    14.843007    14.843007         0.000000 
+          "i:INIT_TRIANGLE"                            -       1    -       0.151523     0.151523     0.151523         0.000000 
+          "i:INIT_GRADIENT_MAT"                        -       1    -       2.428429     2.428429     2.428429         0.000000 
+          "i:GET_DRIFT"                                -       1    -       0.085635     0.085635     0.085635         0.000000 
+          "i:CALC_GEN_THETA_PSI"                       -       1    -       6.943433     6.943433     6.943433         0.000000 
+            "i:CALC_GEN_THETA_PSI_FIRST_PART"          -       1    -       0.003567     0.003567     0.003567         0.000000 
+            "i:CALC_GEN_THETA_PSI_LENGTH"              -       1    -       0.000003     0.000003     0.000003         0.000000 
+            "i:CALC_GEN_THETA_PSI_POL_ANGLE"           -       1    -       6.927041     6.927041     6.927041         0.000000 
+            "i:SOL_FOURIER_WIN"                        -       1    -       0.000003     0.000003     0.000003         0.000000 
+            "i:GRID_SPL_IDX_SPL_COEF"                  -       1    -       0.012752     0.012752     0.012752         0.000000 
+            "i:FFT_PARALLEL_INIT"                      -       1    -       0.000004     0.000004     0.000004         0.000000 
+          "i:INIT_POL_SMOOTH_MAT"                      -       1    -       5.233284     5.233284     5.233284         0.000000 
+          "i:INIT_WALL"                                -       1    -       0.000022     0.000022     0.000022         0.000000 
+        "i:INIT_KSP_COMM"                              -       1    -       0.000384     0.000384     0.000384         0.000000 
+        "i:PSN_MEM_ALLOC"                              -       1    -       0.044707     0.044707     0.044707         0.000000 
+        "i:EXTEND_BOUNDARY"                            -       1    -       0.063970     0.063970     0.063970         0.000000 
+        "i:INIT_FF"                                    -       1    -       4.183773     4.183773     4.183773         0.000000 
+        "i:DIAG_1D_INIT"                               -       1    -       0.000054     0.000054     0.000054         0.000000 
+        "i:SETUP_GET_VOLUME"                           -       1    -      14.815038    14.815038    14.815038         0.000000 
+          "i:GET_VOLUME_RED"                           -       1    -       0.134945     0.134945     0.134945         0.000000 
+        "i:NEUTRAL_INIT"                               -       1    -       0.000009     0.000009     0.000009         0.000000 
+        "i:INIT_WDMCPL"                                -       1    -       1.848329     1.848329     1.848329         0.000000 
+        "i:INIT_WDMCPL_FIELD"                          -       1    -       1.708560     1.708560     1.708560         0.000000 
+        "i:ALLOCATE_TR_P_SAVE"                         -       1    -       0.036168     0.036168     0.036168         0.000000 
+        "i:LOAD"                                       -       1    -      14.336251    14.336251    14.336251         0.000000 
+        "i:DEALLOCATE_TR_P_SAVE"                       -       1    -       0.016122     0.016122     0.016122         0.000000 
+        "i:DUMP_GRID"                                  -       1    -       0.231292     0.231292     0.231292         0.000000 
+        "i:SETUP_CONV_GRID_INIT"                       -       1    -       0.118439     0.118439     0.118439         0.000000 
+        "i:CALC_MAG_DRIFT_FLUX_AVG"                    -       1    -       0.008459     0.008459     0.008459         0.000000 
+        "i:INIT_POISSON"                               -       1    -      26.081688    26.081688    26.081688         0.000000 
+          "i:POISSON_INIT: TEMP"                       -       1    -       0.002490     0.002490     0.002490         0.000000 
+          "i:POISSON_INIT: PRIVATE"                    -       1    -       2.682844     2.682844     2.682844         0.000000 
+            "i:POISSON_INIT: SOLVER_DATA"              -       1    -       0.087517     0.087517     0.087517         0.000000 
+              "i:POISSON_INIT_DATA"                    -       1    -       0.087504     0.087504     0.087504         0.000000 
+            "i:POISSON_INIT: SIMPLE"                   y       0    -       0.000000     0.000000     0.000000         0.000000 
+              "i:POISSON_INIT: POISSON00"              -       1    -       1.152961     1.152961     1.152961         0.000000 
+*               "i:HELM_SOLVER_INIT"                   -       2    -       2.595186     1.442268     1.152918         0.000000 
+                  "i:HELM_SOLVER_INIT: CREATE"         -       2    -       1.016207     0.519631     0.496576         0.000000 
+                  "i:HELM_SOLVER_INIT: HELM"           -       5    -       1.023649     0.217090     0.191906         0.000000 
+                  "i:HELM_SOLVER_INIT: KSP_CREATE"     -       2    -       0.538579     0.523683     0.014897         0.000000 
+              "i:POISSON_INIT: POISSON"                -       1    -       1.442325     1.442325     1.442325         0.000000 
+      "i:sync1_t_prf"                                  -       1    -       0.444744     0.444744     0.444744         0.000000 
+      "i:t_prf"                                        y       0    -       0.000000     0.000000     0.000000         0.000000 
+
+Overhead sum =  3.87e-06 wallclock seconds
+Total calls  = 55
+
+Stats for thread 1:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 2:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 3:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 4:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 5:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 6:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Stats for thread 7:
+     On  Called Recurse   Wallclock          max          min     UTR Overhead 
+
+Overhead sum =         0 wallclock seconds
+Total calls  = 0
+
+Same stats sorted by timer for threaded regions (for timers active on thread 0):
+Thd                                 On  Called Recurse   Wallclock          max          min     UTR Overhead 
+OVERHEAD.000 (wallclock seconds) =  3.87e-06
+OVERHEAD.001 (wallclock seconds) =         0
+OVERHEAD.002 (wallclock seconds) =         0
+OVERHEAD.003 (wallclock seconds) =         0
+OVERHEAD.004 (wallclock seconds) =         0
+OVERHEAD.005 (wallclock seconds) =         0
+OVERHEAD.006 (wallclock seconds) =         0
+OVERHEAD.007 (wallclock seconds) =         0
+OVERHEAD.SUM (wallclock seconds) =  3.87e-06
+
+Multiple parent info for thread 0:
+Columns are count and name for the listed child
+Rows are each parent, with their common child being the last entry, which is indented.
+Count next to each parent is the number of times it called the child.
+Count next to child is total number of times it was called by the listed parents.
+
+       1 i:POISSON_INIT: POISSON00       
+       1 i:POISSON_INIT: POISSON         
+       2   i:HELM_SOLVER_INIT              
+
+
+Thread 0 total memory usage = 33.568 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0.8 KB
+
+Thread 1 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 2 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 3 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 4 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 5 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 6 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Thread 7 total memory usage = 32.768 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 0 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0 KB
+
+Total memory usage all threads = 262.944 KB
+
+Thread mapping:
+threadid_omp[0] = 0
+threadid_omp[1] = -1
+threadid_omp[2] = -1
+threadid_omp[3] = -1
+threadid_omp[4] = -1
+threadid_omp[5] = -1
+threadid_omp[6] = -1
+threadid_omp[7] = -1

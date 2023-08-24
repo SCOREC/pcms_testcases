@@ -1,0 +1,30 @@
+#!/bin/sh -l
+
+#SBATCH --ntasks=256           ### Total number of MPI tasks (16 cores/node)
+##SBATCH -N 32                 ### Number of nodes
+#SBATCH --cpus-per-task=1     ### Number of threads per task (OpenMP)
+#SBATCH --ntasks-per-node=8  ### Tasks per node, ignored if cannot match previous 3
+#SBATCH --ntasks-per-core=1   ### Set to 2 for hypertheading
+#SBATCH --time=120:00:00       ### wall clock time
+#SBATCH --job-name=coupled_XGC
+#SBATCH --exclude=c9-3,c9-4,c10-1,c10-2,c10-3,c10-4
+
+export OMP_NUM_THREADS=1
+export HDF5_USE_FILE_LOCKING=FALSE
+#export SstVerbose=1
+#set the stack size to unlimited
+ulimit -s unlimited
+
+#hdf5 if FUTILS is linked. I should cpompile a static version
+export LD_LIBRARY_PATH=/home/gmerlo/soft/hdf5_intel/lib:$LD_LIBRARY_PATH
+export MV2_ENABLE_AFFINITY=0
+
+#export SstVerbose=1 
+#export FI_LOG_LEVEL=debug
+#export FI_FORK_UNSAFE=no
+
+# Launch the parallel job to the allocated compute nodes
+cd XGC 
+rm XGC.output XGC.error
+#mpiexec -np 256 ./xgc-es > XGC.output  2>XGC.error
+mpirun -n 256 -ppn 8 ./xgc-es.old > XGC.output  2>XGC.error

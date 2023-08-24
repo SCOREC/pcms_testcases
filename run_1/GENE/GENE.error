@@ -1,0 +1,33 @@
+ADIOS2 SST Engine waiting for contact information file ../coupling/field.bp to be created
+
+gene_bot:12705 terminated with signal 7 at PC=48e820 SP=7ffee4debab8.  Backtrace:
+
+gene_bot:12706 terminated with signal 7 at PC=48e820 SP=7ffd1858b1b8.  Backtrace:
+
+gene_bot:12709 terminated with signal 7 at PC=48e820 SP=7ffe96d38338.  Backtrace:
+
+gene_bot:12710 terminated with signal 7 at PC=48e820 SP=7ffd3e10eab8.  Backtrace:
+
+gene_bot:12713 terminated with signal 7 at PC=48e820 SP=7fffbb3ccd38.  Backtrace:
+
+gene_bot:12714 terminated with signal 7 at PC=48e820 SP=7ffd17f9f538.  Backtrace:
+
+gene_bot:12719 terminated with signal 7 at PC=48e820 SP=7ffcc56cb738.  Backtrace:
+
+gene_bot:12720 terminated with signal 7 at PC=48e820 SP=7fff6cb59eb8.  Backtrace:
+
+gene_bot:12717 terminated with signal 7 at PC=48e820 SP=7ffe6f3339b8.  Backtrace:
+
+gene_bot:12718 terminated with signal 7 at PC=48e820 SP=7fff5d6f5838.  Backtrace:
+
+gene_bot:12716 terminated with signal 7 at PC=48e820 SP=7ffeacb1d2b8.  Backtrace:
+
+gene_bot:12715 terminated with signal 7 at PC=48e820 SP=7ffeca10f038.  Backtrace:
+
+gene_bot:12711 terminated with signal 7 at PC=48e820 SP=7fff3d3ac8b8.  Backtrace:
+
+gene_bot:12712 terminated with signal 7 at PC=48e820 SP=7ffc4f2f1c38.  Backtrace:
+
+gene_bot:12707 terminated with signal 7 at PC=48e820 SP=7ffd3d4608b8.  Backtrace:
+
+gene_bot:12708 terminated with signal 7 at PC=48e820 SP=7ffcf77f8d38.  Backtrace:

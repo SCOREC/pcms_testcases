@@ -1,0 +1,5 @@
+&adios_param
+staging_read_method_name='BP'
+staging_read_params = 'verbose=2'
+/
+
